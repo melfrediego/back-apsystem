@@ -3,8 +3,6 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-
-use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,10 +19,14 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        User::create([
-            'name' => 'Melfre Diego',
-            'email' => 'melfre21@gmail.com',
-            'password' => bcrypt('mdrs2112'),
+        $this->call([
+            UsersSeeder::class,
+            CategoriasSeeder::class,
+            MarcasTableSeeder::class,
+            DisponibilidadeProdutosSeeder::class,
+            EstoqueAcabarSeeder::class,
+            SituacaoPedidoSeeder::class,
+            // VendedorSeeder::class,
         ]);
     }
 }
